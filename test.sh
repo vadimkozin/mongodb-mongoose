@@ -1,0 +1,117 @@
+#!/bin/sh
+host="http://localhost:3000"
+
+# USERS
+echo "#delete all users"
+curl -X DELETE "${host}/api/users/delete"
+
+echo " "
+echo " "
+echo "#add users:"
+curl -X POST --data "name=Ivan" "${host}/api/users"
+echo " "
+curl -X POST --data "name=Alex" "${host}/api/users"
+echo " "
+curl -X POST --data "name=Petr" "${host}/api/users"
+echo " "
+curl -X POST --data "name=Petr" "${host}/api/users"
+echo " "
+curl -X POST --data "name=Ivan" "${host}/api/users"
+echo " "
+echo " "
+echo " "
+
+echo "#get list users:"
+curl -X GET "${host}/api/users"
+echo " "
+echo " "
+
+echo "#get user by name: Ivan"
+curl -X GET "${host}/api/users/name/Ivan"
+echo " "
+echo " "
+
+echo "#delete user by name=Ivan"
+curl -X DELETE "${host}/api/users/name/Ivan"
+echo " "
+echo " "
+
+echo "#get list users:"
+curl -X GET "${host}/api/users"
+echo " "
+echo " "
+
+# TASKS
+echo "#delete all tasks"
+curl -X DELETE "${host}/api/tasks/delete"
+echo " "
+echo " "
+echo "#add tasks:"
+curl -X POST --data "name=Task1&desc=Desc1" "${host}/api/tasks"
+echo " "
+curl -X POST --data "name=Task2&desc=Desc2" "${host}/api/tasks"
+echo " "
+curl -X POST --data "name=Task3&desc=Description3" "${host}/api/tasks"
+echo " "
+curl -X POST --data "name=Task4&desc=Description4" "${host}/api/tasks"
+echo " "
+
+echo "#get list tasks:"
+curl -X GET "${host}/api/tasks"
+echo " "
+echo " "
+
+echo "#edit task by name Task2"
+curl -X PUT -d "name=NEW-Task2&desc=Very Good Task!&open=true" "${host}/api/tasks/name/Task2"
+echo " "
+echo " "
+
+echo "#get list tasks:"
+curl -X GET "${host}/api/tasks"
+echo " "
+echo " "
+
+echo "#delete task by name=Task3"
+curl -X DELETE "${host}/api/tasks/name/Task3"
+echo " "
+echo " "
+
+echo "#get list tasks:"
+curl -X GET "${host}/api/tasks"
+echo " "
+echo " "
+
+echo "#get task by name: Task1"
+curl -X GET "${host}/api/tasks/name/Task1"
+echo " "
+echo " "
+
+echo "#get task by desc: good"
+curl -X GET "${host}/api/tasks/desc/good"
+echo " "
+echo " "
+
+echo "#open task Task1"
+curl -X PUT  "${host}/api/tasks/name/Task1/open"
+echo " "
+echo " "
+
+echo "#close task Task4"
+curl -X PUT  "${host}/api/tasks/name/Task4/close"
+echo " "
+echo " "
+
+echo "#get list tasks:"
+curl -X GET "${host}/api/tasks"
+echo " "
+echo " "
+
+echo "#delegete Task1 on userId:999999999999999999999999"
+curl -X PUT  "${host}/api/tasks/name/Task1/userid/999999999999999999999999"
+echo " "
+echo " "
+
+echo "#get list tasks:"
+curl -X GET "${host}/api/tasks"
+echo " "
+echo " "
