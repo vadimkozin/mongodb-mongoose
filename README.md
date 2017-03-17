@@ -1,17 +1,17 @@
-##Homework "«приложение на Express.js «Список задач» используя библиотеку mongoose в виде API".
+## Homework "«приложение на Express.js «Список задач» используя библиотеку mongoose в виде API".
 
-##prepare
+## prepare
 ```bash
     the MongoDB server should be running:  mongodb://localhost:27017
 ```
 
-##run
+## run
 ```bash
     npm install
     node app
 ```
 
-##test
+## test
 ```bash
     curl must be installed
     test.sh
