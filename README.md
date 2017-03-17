@@ -1,4 +1,4 @@
-## Homework "«приложение на Express.js «Список задач» используя библиотеку mongoose в виде API".
+## Создать приложение на Express.js «Список задач» используя библиотеку mongoose в виде API"
 
 ## prepare
 ```bash
